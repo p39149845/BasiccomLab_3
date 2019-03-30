@@ -4,11 +4,20 @@ function addli() {
         Phone = document.getElementById("phone").value,
         Message = document.getElementById("message").value;
     if (Subject == "" || Name == "" || Phone == "" || Message == "" || Email == "") {
-        alert("please insert your contact message")
+        alert("ใส่ข้อความให้ครบด้วย")
         return false;
     }
     var Man = document.getElementById("man").checked;
     var Girl = document.getElementById("girl").checked;
+    
+    if(Man == ""&&Girl == ""){
+        alert("มึงจะไม่มีเพศไม่ได้");
+        return false;
+    }
+    if(Man == true&&Girl == true){
+        alert("มึงจะมี2เพศไม่ได้");
+        return false;
+    }
     if (Man == true) {
         Man = "male";
     } else Man = "";
@@ -38,6 +47,10 @@ function addli() {
         document.getElementById("list").removeChild(liNode);
     }
 }
+
+
+
+
 
 
 
